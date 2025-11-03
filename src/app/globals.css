@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Subtle link hover */
+.prose a{ text-underline-offset:3px; }
+.prose a:hover{ text-decoration-color: rgb(2,132,199); }
