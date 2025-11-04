@@ -1,0 +1,1 @@
+$(printf '\xFF\xD8\xFF\xDB') # tiny invalid placeholder to remind replacement; please drop a real image here
