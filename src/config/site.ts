@@ -1,10 +1,10 @@
 export const SITE = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'RSD Whisky',
   brand: {
-    // Warm, classic whisky tones
-    accent:   '#B78E5C',  // gold
-    subaccent:'#8C5E22',  // deep amber
-    logo: '/images/brand/rsd-logo.svg',
+    // Warm, classic whisky tones (keep as-is)
+    accent:   '#B78E5C',
+    subaccent:'#8C5E22',
+    logo: '/images/brand/rsd-logo.jpg',   // <-- now JPG
     cityTag: 'Edinburgh — Home of Scotch Whisky',
   },
   links: {

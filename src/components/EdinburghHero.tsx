@@ -7,7 +7,7 @@ export default function EdinburghHero() {
     <section className="relative overflow-hidden rounded-2xl border bg-white">
       <div className="absolute inset-0">
         <Image
-          src="/images/edinburgh-skyline.svg"
+          src="/images/edinburgh-skyline.jpg"  // <-- now JPG
           alt="Edinburgh skyline"
           fill
           className="object-cover"

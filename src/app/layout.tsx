@@ -6,7 +6,7 @@ import SiteFooter from '@/components/SiteFooter';
 export const metadata = {
   title: SITE.name,
   description: 'RSD Whisky — Advisory, sourcing and prestige bottlings.',
-  icons: { icon: '/images/brand/rsd-logo.svg' },
+  icons: { icon: '/images/brand/rsd-logo.jpg' }, // <-- now JPG
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
