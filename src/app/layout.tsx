@@ -1,21 +1,23 @@
-import './globals.css';
-import { SITE } from '@/config/site';
-import TopNav from '@/components/TopNav';
-import SiteFooter from '@/components/SiteFooter';
+import "./globals.css";
+import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: SITE.name,
-  description: 'RSD Whisky — Advisory, sourcing and prestige bottlings.',
-  icons: { icon: '/images/brand/rsd-logo.jpg' }, // <-- now JPG
+export const metadata: Metadata = {
+  title: "RSD Whisky",
+  description:
+    "Independent Scotch whisky business based in Edinburgh, supplying Scotch whisky and canned RTD drinks to international retailers.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900 antialiased">
-        <TopNav />
-        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
-        <SiteFooter />
+      <body className="min-h-screen bg-neutral-50 text-neutral-900">
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
