@@ -1,8 +1,7 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -16,34 +15,52 @@ const navItems = [
 ];
 
 export default function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
 
   return (
-    <header className="border-b border-neutral-200 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href="/" className="text-sm font-semibold tracking-wide">
-          <span className="mr-2 rounded-full border border-amber-600 px-2 py-0.5 text-xs">
+    <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
+        {/* Logo / wordmark */}
+        <Link href="/" className="flex items-center gap-3">
+          <div className="flex items-center justify-center rounded-full border border-amber-500 px-3 py-1 text-xs font-semibold tracking-wide text-amber-700">
             RSD
+          </div>
+          <span className="text-sm font-semibold text-neutral-900">
+            RSD Whisky
           </span>
-          RSD Whisky
         </Link>
-        <nav className="hidden gap-4 text-sm md:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={clsx(
-                "rounded-full px-3 py-1 transition",
-                pathname === item.href
-                  ? "border border-amber-700 text-amber-800"
-                  : "text-neutral-700 hover:bg-neutral-100"
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
       </div>
+
+      {/* Scrollable nav row – visible on all screen sizes */}
+      <nav
+        aria-label="Main"
+        className="border-t border-neutral-200 bg-white/90"
+      >
+        <div className="mx-auto max-w-5xl px-2 sm:px-4">
+          <ul className="flex gap-2 overflow-x-auto py-2 text-xs sm:gap-3 sm:text-sm">
+            {navItems.map((item) => {
+              const isActive =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
+              return (
+                <li key={item.href} className="flex-shrink-0">
+                  <Link
+                    href={item.href}
+                    className={[
+                      "whitespace-nowrap rounded-full border px-3 py-1 transition",
+                      isActive
+                        ? "border-amber-600 bg-amber-50 text-amber-800"
+                        : "border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400",
+                    ].join(" ")}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </nav>
     </header>
   );
 }
