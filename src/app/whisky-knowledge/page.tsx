@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function ImagePlaceholder({ label }: { label: string }) {
   return (
-    <div className="mt-4 mb-2 h-40 rounded-2xl bg-neutral-200/70 text-xs text-neutral-600 flex items-center justify-center text-center px-4">
+    <div className="mt-4 mb-2 flex h-40 items-center justify-center rounded-2xl bg-neutral-200/70 px-4 text-center text-xs text-neutral-600">
       {label}
     </div>
   );
@@ -56,7 +56,7 @@ export default function WhiskyKnowledgePage() {
           </li>
           <li>
             <a href="#references" className="underline-offset-2 hover:underline">
-              Useful references
+              Scotch in law – essentials
             </a>
           </li>
         </ul>
@@ -288,55 +288,39 @@ export default function WhiskyKnowledgePage() {
         <ImagePlaceholder label="Image placeholder – selection of whisky glasses: Glencairn, tumbler and highball." />
       </section>
 
-      {/* References */}
+      {/* Scotch in law – essentials */}
       <section id="references">
-        <h2 className="mb-2 mt-8 text-lg font-semibold">Useful references</h2>
+        <h2 className="mb-2 mt-8 text-lg font-semibold">Scotch in law – essentials</h2>
         <p>
-          For those who wish to read further, the Scotch Whisky Association provides
-          accessible material on Scotch, its regions and styles:
+          For most drinkers, it is enough to know how Scotch looks, smells and tastes.
+          For those who need the legal outline, the main points are straightforward:
         </p>
         <ul className="mt-2 list-disc space-y-1 pl-4 text-sm">
+          <li>Scotch must be distilled and matured in Scotland.</li>
+          <li>Only water, cereals and yeast may be used in production.</li>
+          <li>It must be matured in oak casks in Scotland for at least three years.</li>
+          <li>The minimum bottling strength is 40% ABV.</li>
           <li>
-            Distillery map (PDF):{" "}
-            <Link
-              href="https://www.scotch-whisky.org.uk/media/2492/big-map-of-scotch-whisky-scotch-whisky-association-2025.pdf"
-              target="_blank"
-              className="underline"
-            >
-              Scotch Whisky distillery map
-            </Link>
+            There are five legal categories: single malt, single grain, blended
+            Scotch, blended malt and blended grain.
           </li>
           <li>
-            Regions guide:{" "}
-            <Link
-              href="https://www.scotch-whisky.org.uk/discover-scotch/enjoying-scotch/scotch-whisky-regions/"
-              target="_blank"
-              className="underline"
-            >
-              Scotch whisky regions
-            </Link>
-          </li>
-          <li>
-            Categories:{" "}
-            <Link
-              href="https://www.scotch-whisky.org.uk/discover-scotch/enjoying-scotch/scotch-whisky-categories/"
-              target="_blank"
-              className="underline"
-            >
-              Scotch whisky categories
-            </Link>
-          </li>
-          <li>
-            Tasting toolkit:{" "}
-            <Link
-              href="https://www.scotch-whisky.org.uk/discover-scotch/enjoying-scotch/scotch-whisky-tasting-toolkit/"
-              target="_blank"
-              className="underline"
-            >
-              Scotch whisky tasting toolkit
-            </Link>
+            The Regulations recognise five regions: Highlands, Lowlands, Speyside,
+            Islay and Campbeltown.
           </li>
         </ul>
+        <p className="mt-2 text-sm text-neutral-700">
+          Those who wish to read the full legal text can find it through the Scotch
+          Whisky Association&apos;s material on{" "}
+          <Link
+            href="https://www.scotch-whisky.org.uk/discover-scotch/enjoying-scotch/scotch-whisky-categories/"
+            target="_blank"
+            className="underline"
+          >
+            Scotch whisky categories
+          </Link>
+          . For most purposes, the summary above will be enough.
+        </p>
       </section>
     </PageShell>
   );
