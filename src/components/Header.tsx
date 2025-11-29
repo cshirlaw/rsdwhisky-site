@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -22,8 +23,15 @@ export default function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Logo / wordmark */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex items-center justify-center rounded-full border border-amber-500 px-3 py-1 text-xs font-semibold tracking-wide text-amber-700">
-            RSD
+          <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-amber-500 bg-white">
+            <Image
+              src="/images/RSD_Monogram.jpg"
+              alt="RSD Whisky logo"
+              width={36}
+              height={36}
+              className="h-full w-full object-contain"
+              priority
+            />
           </div>
           <span className="text-sm font-semibold text-neutral-900">
             RSD Whisky
