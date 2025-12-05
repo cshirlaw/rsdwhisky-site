@@ -7,7 +7,7 @@ export default function HomePage() {
       <div
         className="pointer-events-none absolute inset-0 -z-10 bg-black"
         style={{
-          backgroundImage: "url(/images/calton-hill-1.jpeg)", // IMPORTANT: .jpeg
+          backgroundImage: "url(/images/calton-hill-1.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -44,12 +44,13 @@ export default function HomePage() {
             >
               Brands
             </Link>
-            <Link
+            {/* RTD button removed for now */}
+            {/* <Link
               href="/rtd"
               className="inline-flex items-center justify-center rounded-full border border-amber-200/70 bg-black/40 px-4 py-2 text-sm font-medium text-amber-50 backdrop-blur"
             >
               RTD drinks
-            </Link>
+            </Link> */}
             <Link
               href="/whisky-knowledge"
               className="inline-flex items-center justify-center rounded-full border border-amber-200/70 bg-black/40 px-4 py-2 text-sm font-medium text-amber-50 backdrop-blur"
@@ -69,10 +70,9 @@ export default function HomePage() {
             private clients under clear, well presented brands.
           </p>
           <ul className="mt-3 ml-5 list-disc space-y-1 text-base text-neutral-900">
-            <li>Scotch whisky in bottle and in bulk for export markets.</li>
-            <li>Irish whiskey in bottle and in bulk for export markets.</li>
+            <li>Scotch whisky in bottle for export markets.</li>
+            <li>Irish whiskey in bottle for export markets.</li>
             <li>Exclusive brands for retailers and private clients.</li>
-            <li>Ready-to-drink spirit mixes in cans for modern retail.</li>
             <li>Prestige bottlings and special single-cask projects.</li>
           </ul>
         </section>
